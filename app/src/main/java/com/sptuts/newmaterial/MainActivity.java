@@ -1,18 +1,22 @@
 package com.sptuts.newmaterial;
 
+import android.net.Uri;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.sptuts.newmaterial.adapters.PagerAdapter;
+import com.sptuts.newmaterial.frags.Firstfragment;
+
 //This is just a sample comment
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Firstfragment.OnFragmentInteractionListener {
 
     FloatingActionButton fab;
     TabLayout tabLayout;
@@ -30,9 +34,31 @@ public class MainActivity extends AppCompatActivity {
     private void setupTabLayout() {
         tabLayout = (TabLayout)findViewById(R.id.tabLayout);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        tabLayout.addTab(tabLayout.newTab().setText("Data"));
-        tabLayout.addTab(tabLayout.newTab().setText("Gain"));
-        tabLayout.addTab(tabLayout.newTab().setText("Loss"));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_data));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_up));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_down));
+
+
+        final ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
+        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition(),true);
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     @Override
@@ -74,5 +100,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
