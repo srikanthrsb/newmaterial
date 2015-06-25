@@ -40,16 +40,32 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
     }
 
     private void setupDrawerLayout() {
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.openDrawer, R.string.closeDrawer) {
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
 
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+            }
+        };
 
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
 
+        setupNavigation();
+    }
+
+    private void setupNavigation() {
         NavigationView navView = (NavigationView) findViewById(R.id.navigation_view);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-                Snackbar.make(findViewById(R.id.coordLayout),menuItem.getTitle() + "pressed", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(findViewById(R.id.coordLayout), menuItem.getTitle() + " is pressed", Snackbar.LENGTH_LONG).show();
                 menuItem.setChecked(true);
                 drawerLayout.closeDrawers();
                 return true;
@@ -58,21 +74,21 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
     }
 
     private void setupTabLayout() {
-        tabLayout = (TabLayout)findViewById(R.id.tabLayout);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_data));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_up));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_down));
 
 
-        final ViewPager viewPager = (ViewPager)findViewById(R.id.pager);
-        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        final PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition(),true);
+                viewPager.setCurrentItem(tab.getPosition(), true);
             }
 
             @Override
@@ -95,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
     }
 
     private void setupFAB() {
-        fab = (FloatingActionButton)findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(fabLstnr);
     }
 
@@ -103,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
         @Override
         public void onClick(View view) {
             Snackbar.make(findViewById(R.id.coordLayout), "Snackbar called by Fab", Snackbar.LENGTH_LONG)
-                    .setAction("UNDO",this)
+                    .setAction("UNDO", this)
                     .show();
         }
     };

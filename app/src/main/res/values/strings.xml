@@ -13,4 +13,6 @@
     <string name="hello_blank_fragment">Complete Data</string>
     <string name="secondfragment">Gain</string>
     <string name="thirdfragment">Loss</string>
+    <string name="openDrawer">open</string>
+    <string name="closeDrawer">close</string>
 </resources>
