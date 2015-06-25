@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_work"
+            android:icon="@drawable/ic_bcase"
+            android:title="Work" />
+        <item
+            android:id="@+id/nav_groups"
+            android:icon="@drawable/ic_groups"
+            android:title="Buddies" />
+        <item
+            android:id="@+id/nav_movies"
+            android:icon="@drawable/ic_movies"
+            android:title="Movies" />
+        <item
+            android:id="@+id/nav_shopping"
+            android:icon="@drawable/ic_shopping"
+            android:title="Shopping" />
+
+    </group>
+
+    <item android:title="Sub-Items">
+        <menu>
+            <item
+                android:icon="@drawable/ic_feedback"
+                android:title="Feedback" />
+            <item
+                android:icon="@drawable/ic_settings"
+                android:title="Settings" />
+        </menu>
+
+
+    </item>
+</menu>

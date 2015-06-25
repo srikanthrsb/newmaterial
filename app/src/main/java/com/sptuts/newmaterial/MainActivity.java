@@ -3,9 +3,13 @@ package com.sptuts.newmaterial;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -20,15 +24,37 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
 
     FloatingActionButton fab;
     TabLayout tabLayout;
+    Toolbar toolbar;
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupToolbar();
+        setupDrawerLayout();
         setupTabLayout();
         setupFAB();
 
+        //getSupportActionBar().setHomeButtonEnabled(true);
+    }
+
+    private void setupDrawerLayout() {
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+
+
+
+
+        NavigationView navView = (NavigationView) findViewById(R.id.navigation_view);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                Snackbar.make(findViewById(R.id.coordLayout),menuItem.getTitle() + "pressed", Snackbar.LENGTH_LONG).show();
+                menuItem.setChecked(true);
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
     }
 
     private void setupTabLayout() {
@@ -76,15 +102,17 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
     View.OnClickListener fabLstnr = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Snackbar.make(findViewById(R.id.rootLayout), "Snackbar called by Fab", Snackbar.LENGTH_LONG)
+            Snackbar.make(findViewById(R.id.coordLayout), "Snackbar called by Fab", Snackbar.LENGTH_LONG)
                     .setAction("UNDO",this)
                     .show();
         }
     };
 
     private void setupToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -92,13 +120,20 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+      /*  int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
 
+        return super.onOptionsItemSelected(item);*/
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
