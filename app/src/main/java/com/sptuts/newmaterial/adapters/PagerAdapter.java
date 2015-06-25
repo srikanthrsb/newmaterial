@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.sptuts.newmaterial.frags.Firstfragment;
-import com.sptuts.newmaterial.frags.Secondfragment;
-import com.sptuts.newmaterial.frags.Thirdfragment;
+import com.sptuts.newmaterial.fragments.Firstfragment;
+import com.sptuts.newmaterial.fragments.Secondfragment;
+import com.sptuts.newmaterial.fragments.Thirdfragment;
 
 /**
  * Created by SHRI on 6/24/2015.

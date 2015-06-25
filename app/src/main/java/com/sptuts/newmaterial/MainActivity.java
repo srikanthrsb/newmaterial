@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.sptuts.newmaterial.adapters.PagerAdapter;
-import com.sptuts.newmaterial.frags.Firstfragment;
+import com.sptuts.newmaterial.fragments.Firstfragment;
 
 //This is just a sample comment
 public class MainActivity extends AppCompatActivity implements Firstfragment.OnFragmentInteractionListener {
