@@ -1,15 +1,78 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.sptuts.newmaterial.frags.Secondfragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilFName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/secondfragment"
-        android:layout_gravity="center_horizontal|center_vertical"
-        />
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        >
+        <EditText
+            android:id="@+id/edFName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="First Name"
+            />
 
-</FrameLayout>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilLName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tilFName"
+        >
+        <EditText
+            android:id="@+id/edLName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Last Name"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tilLName"
+        >
+        <EditText
+            android:id="@+id/edAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Age"
+            android:inputType="number"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/tilPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tilAge"
+        >
+        <EditText
+            android:id="@+id/edPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Phone"
+            android:inputType="phone"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+</RelativeLayout >
