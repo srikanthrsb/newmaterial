@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.sptuts.newmaterial.fragments.Firstfragment;
-import com.sptuts.newmaterial.fragments.Secondfragment;
 import com.sptuts.newmaterial.fragments.Thirdfragment;
+import com.sptuts.newmaterial.fragments.TweetFragment;
+import com.sptuts.newmaterial.fragments.TweetList;
 
 /**
  * Created by SHRI on 6/24/2015.
@@ -25,10 +25,12 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                Firstfragment firstFrag = new Firstfragment();
+                //Firstfragment firstFrag = new Firstfragment();
+                TweetFragment firstFrag = new TweetFragment();
                 return firstFrag;
             case 1:
-                Secondfragment secondFrag = new Secondfragment();
+                //Secondfragment secondFrag = new Secondfragment();
+                TweetList secondFrag = new TweetList();
                 return secondFrag;
             case 2:
                 Thirdfragment thirdFrag = new Thirdfragment();

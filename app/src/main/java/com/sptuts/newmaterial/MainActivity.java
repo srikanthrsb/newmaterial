@@ -16,11 +16,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.crashlytics.android.Crashlytics;
 import com.sptuts.newmaterial.adapters.PagerAdapter;
 import com.sptuts.newmaterial.fragments.Firstfragment;
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 
 //This is just a sample comment
 public class MainActivity extends AppCompatActivity implements Firstfragment.OnFragmentInteractionListener {
+
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "dwXaIrLC5eXMjaYCiLEDtssLJ";
+    private static final String TWITTER_SECRET = "ifHdbSDY2JZwFL6Gbw7qUZRNorjDmLUZRKn4k0UCHG4aLpEJD7";
+
 
     FloatingActionButton fab;
     TabLayout tabLayout;
@@ -30,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig), new Crashlytics());
         setContentView(R.layout.activity_main);
         setupToolbar();
         setupDrawerLayout();
