@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sptuts.newmaterial.R;
+import com.sptuts.newmaterial.utils.Logger;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.TwitterException;
@@ -84,7 +85,7 @@ public class TweetList extends ListFragment {
 
                     @Override
                     public void failure(TwitterException e) {
-
+                        Logger.e("TWT",e.getMessage());
                     }
                 });
             }
