@@ -15,4 +15,6 @@
     <string name="thirdfragment">Loss</string>
     <string name="openDrawer">open</string>
     <string name="closeDrawer">close</string>
+    <string name="title_activity_place">PlaceActivity</string>
+    <string name="tasktitlehint">Task Title</string>
 </resources>

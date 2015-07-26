@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/grpTop"
+        android:checkableBehavior="single">
         <item
             android:id="@+id/nav_work"
             android:icon="@drawable/ic_bcase"
@@ -12,7 +14,7 @@
             android:title="Buddies" />
         <item
             android:id="@+id/nav_movies"
-            android:icon="@drawable/ic_movies"
+            android:icon="@drawable/ic_nav_category_new"
             android:title="Movies" />
         <item
             android:id="@+id/nav_shopping"
@@ -21,16 +23,14 @@
 
     </group>
 
-    <item android:title="Sub-Items">
-        <menu>
-            <item
-                android:icon="@drawable/ic_feedback"
-                android:title="Feedback" />
-            <item
-                android:icon="@drawable/ic_settings"
-                android:title="Settings" />
-        </menu>
-
-
-    </item>
+    <group
+        android:id="@+id/grpBelow"
+        android:checkableBehavior="none">
+        <item
+            android:icon="@drawable/ic_feedback"
+            android:title="Feedback" />
+        <item
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+    </group>
 </menu>

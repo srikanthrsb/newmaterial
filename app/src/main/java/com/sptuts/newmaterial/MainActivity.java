@@ -1,5 +1,6 @@
 package com.sptuts.newmaterial;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -129,9 +130,12 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
     View.OnClickListener fabLstnr = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Snackbar.make(findViewById(R.id.coordLayout), "Snackbar called by Fab", Snackbar.LENGTH_LONG)
+            /*Snackbar.make(findViewById(R.id.coordLayout), "Snackbar called by Fab", Snackbar.LENGTH_LONG)
                     .setAction("UNDO", this)
-                    .show();
+                    .show();*/
+
+            Intent intent = new Intent(MainActivity.this,PlaceActivity.class);
+            startActivity(intent);
         }
     };
 

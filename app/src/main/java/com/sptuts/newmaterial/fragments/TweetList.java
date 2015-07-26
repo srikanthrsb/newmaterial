@@ -66,7 +66,7 @@ public class TweetList extends ListFragment {
         final SwipeRefreshLayout swipeRefreshTweets = (SwipeRefreshLayout)getActivity().findViewById(R.id.swipeRefreshTweets);
         //UserTimeline userTimeline = new UserTimeline.Builder().screenName("ny1").build();
         final SearchTimeline searchTimeline = new SearchTimeline.Builder()
-                .query("#NarendraModi")
+                .query("#Android")
                 .build();
         final TweetTimelineListAdapter adapter = new TweetTimelineListAdapter(getActivity(),
                 searchTimeline);
