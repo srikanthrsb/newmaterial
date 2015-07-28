@@ -57,89 +57,125 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal"
-            android:weightSum="1">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="0dp"
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:src="@drawable/ic_loc_25_5" />
+                android:weightSum="1">
 
-            <TextView
-                android:id="@+id/tvLoc"
-                android:layout_width="0dp"
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/ic_loc_25_5" />
+
+                <TextView
+                    android:id="@+id/tvLocTab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.8"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:hint="Current Location"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.8"
-                android:enabled="false"
-                android:gravity="center_vertical"
-                android:hint="Current Location"
-                android:textSize="20sp" />
-
-        </LinearLayout>
+                android:layout_marginTop="5dp"
+                android:gravity="right"
+                android:weightSum="1">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal"
-            android:weightSum="1">
+                <TextView
+                    android:id="@+id/tvLocTab2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.8"
+                    android:enabled="false"
+                    android:gravity="center_vertical|left"
+                    android:hint="2015 Stack exchange inc; user contributions licensed under cc by-sa 3.0"
+                    android:textSize="15sp" />
+            </TableRow>
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:src="@drawable/ic_rad_25_5" />
 
-            <SeekBar
-                android:id="@+id/skBar"
-                android:layout_width="0dp"
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="0.8"
-                android:enabled="false"
-                android:gravity="center_vertical"
-                android:hint="Current Location"
-                android:textSize="20sp" />
+                android:layout_marginTop="5dp"
+                android:weightSum="1">
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="0.2"
-            android:orientation="horizontal"
-            android:weightSum="1">
+                <ImageView
+                    android:id="@+id/imgMap"
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:enabled="false" />
+            </TableRow>
 
-            <ImageView
-                android:layout_width="0dp"
+
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:src="@drawable/ic_time_25_5" />
+                android:layout_marginTop="5dp"
+                android:weightSum="1">
 
-            <android.support.v7.widget.SwitchCompat
-                android:id="@+id/switch_compat"
-                android:layout_width="0dp"
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/ic_rad_25_5" />
+
+                <SeekBar
+                    android:id="@+id/skBar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="0.8"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:hint="Current Location"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.8"
-                android:checked="false"
-                android:text="Any Date Time"
-                android:textOff="Off"
-                android:textOn="On"
-                android:textSize="20sp"
-                app:showText="false" />
+                android:layout_marginTop="5dp"
+                android:weightSum="1">
 
-        </LinearLayout>
 
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/ic_time_25_5" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switch_compat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:checked="false"
+                    android:text="Any Date Time"
+                    android:textOff="Off"
+                    android:textOn="On"
+                    android:textSize="20sp"
+                    app:showText="false" />
+            </TableRow>
+
+        </TableLayout>
+
+        
     </LinearLayout>
 
 
