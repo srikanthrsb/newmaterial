@@ -49,8 +49,7 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
+                android:layout_height="match_parent">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -73,7 +72,7 @@
                         android:gravity="center_vertical"
                         android:text="@string/currentlocation"
                         android:textColor="@color/primary_text"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
                 </TableRow>
 
                 <TableRow
@@ -93,10 +92,10 @@
                         android:enabled="false"
                         android:gravity="center_vertical|left"
                         android:text="2015 Stack exchange inc; user contributions licensed under cc by-sa 3.0"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
                 </TableRow>
 
-                <include layout="@layout/table_divider" />
+                <!--<include layout="@layout/table_divider" />-->
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -120,7 +119,7 @@
                         android:gravity="center_vertical|left"
                         android:text="Radius : 200m"
                         android:textColor="@color/primary_text"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
 
 
                 </TableRow>
@@ -142,7 +141,7 @@
 
                 </TableRow>
 
-                <include layout="@layout/table_divider" />
+                <!--<include layout="@layout/table_divider" />-->
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -155,7 +154,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
-                        android:src="@drawable/ic_time_25_5" />
+                        android:src="@drawable/ic_bell_25_5" />
 
                     <TextView
                         android:id="@+id/tvTriggerTitle"
@@ -166,7 +165,7 @@
                         android:gravity="center_vertical|left"
                         android:text="Notify Points"
                         android:textColor="@color/primary_text"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
                 </TableRow>
 
                 <TableRow
@@ -183,29 +182,38 @@
                         android:layout_weight="0.6"
                         android:orientation="horizontal">
 
-                        <RadioButton
+                        <RadioGroup
+                            android:id="@+id/radioTrigger"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:text="Entry" />
+                            android:orientation="horizontal"
+                            android:layout_weight="0.6"
+                            >
 
-                        <RadioButton
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:text="Exit" />
+                            <RadioButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.2"
+                                android:text="Entry" />
 
-                        <RadioButton
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:text="Both" />
+                            <RadioButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.2"
+                                android:text="Exit" />
 
+                            <RadioButton
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.2"
+                                android:text="Both" />
+
+                        </RadioGroup>
                     </LinearLayout>
 
                 </TableRow>
 
-                <include layout="@layout/table_divider" />
+                <!--<include layout="@layout/table_divider" />-->
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -228,7 +236,136 @@
                         android:layout_weight="0.8"
                         android:checked="true"
                         android:text="@string/allday"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+
+                    <TextView
+                        android:id="@+id/tvFromDate"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.35"
+                        android:enabled="false"
+                        android:gravity="center_vertical|left"
+                        android:text="21-Mar-2015"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/to"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.10"
+                        android:enabled="false"
+                        android:gravity="center_vertical|left"
+                        android:text="To"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvToDate"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.35"
+                        android:enabled="false"
+                        android:gravity="center_vertical|left"
+                        android:text="21-Mar-2015"
+                        android:textSize="15sp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="7dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+
+                    <TextView
+                        android:id="@+id/tvFromTime"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.35"
+                        android:enabled="false"
+                        android:gravity="center_vertical|left"
+                        android:text="6:00 AM"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.10"
+                        android:enabled="false"
+                        android:gravity="center_vertical|left"
+                        android:text="To"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvToTime"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.35"
+                        android:enabled="false"
+                        android:gravity="center_vertical|left"
+                        android:text="1:00 PM"
+                        android:textSize="15sp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/ic_repeat_25_5" />
+
+                    <TextView
+                        android:id="@+id/tvRepeatTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.4"
+                        android:gravity="center_vertical|left"
+                        android:text="Repeat"
+                        android:textColor="@color/primary_text"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvRepeatData"
+                        style="?android:attr/spinnerStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.4"
+                        android:gravity="center_vertical|left"
+                        android:text="None"
+                        android:textColor="@color/primary_text"
+                        android:textSize="15sp" />
                 </TableRow>
 
             </TableLayout>
@@ -249,6 +386,7 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
         android:src="@drawable/ic_action_store"
+        android:visibility="gone"
         app:fabSize="normal" />
 
 </RelativeLayout>

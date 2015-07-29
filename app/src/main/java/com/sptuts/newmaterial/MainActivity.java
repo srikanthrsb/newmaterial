@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements Firstfragment.OnF
                     .setAction("UNDO", this)
                     .show();*/
 
-            Intent intent = new Intent(MainActivity.this,PlaceActivity.class);
+            Intent intent = new Intent(MainActivity.this,AddPlaces.class);
             startActivity(intent);
         }
     };

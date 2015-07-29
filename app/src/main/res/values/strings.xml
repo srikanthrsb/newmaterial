@@ -17,4 +17,7 @@
     <string name="closeDrawer">close</string>
     <string name="title_activity_place">PlaceActivity</string>
     <string name="tasktitlehint">Task Title</string>
+    <string name="allday">All Day</string>
+    <string name="currentlocation">Current Location</string>
+    <string name="desc">Description</string>
 </resources>
