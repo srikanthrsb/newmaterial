@@ -1,0 +1,254 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sptuts.newmaterial.fragments.AddPlacesFragment">
+
+    <include
+        android:id="@+id/toolbarLay"
+        layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarLay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilTaskTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/tvTaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tasktitlehint"
+                    android:textSize="20sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/tilTaskDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/tvTaskDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/desc"
+                    android:textSize="16sp" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/ic_loc_25_5" />
+
+                    <TextView
+                        android:id="@+id/tvLoc"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.8"
+                        android:gravity="center_vertical"
+                        android:text="@string/currentlocation"
+                        android:textColor="@color/primary_text"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+
+                    <TextView
+                        android:id="@+id/tvLocDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.8"
+                        android:enabled="false"
+                        android:gravity="center_vertical|left"
+                        android:text="2015 Stack exchange inc; user contributions licensed under cc by-sa 3.0"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <include layout="@layout/table_divider" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/ic_rad_25_5" />
+
+
+                    <TextView
+                        android:id="@+id/tvRadDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.8"
+                        android:gravity="center_vertical|left"
+                        android:text="Radius : 200m"
+                        android:textColor="@color/primary_text"
+                        android:textSize="20sp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+                    <SeekBar
+                        android:id="@+id/sbRadius"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:max="100"
+                        android:progress="10" />
+
+                </TableRow>
+
+                <include layout="@layout/table_divider" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/ic_time_25_5" />
+
+                    <TextView
+                        android:id="@+id/tvTriggerTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.8"
+                        android:gravity="center_vertical|left"
+                        android:text="Notify Points"
+                        android:textColor="@color/primary_text"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="0.6"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:text="Entry" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:text="Exit" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:text="Both" />
+
+                    </LinearLayout>
+
+                </TableRow>
+
+                <include layout="@layout/table_divider" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:src="@drawable/ic_time_25_5" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:id="@+id/switch_compat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.8"
+                        android:checked="true"
+                        android:text="@string/allday"
+                        android:textSize="20sp" />
+                </TableRow>
+
+            </TableLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_action_store"
+        app:fabSize="normal" />
+
+</RelativeLayout>
