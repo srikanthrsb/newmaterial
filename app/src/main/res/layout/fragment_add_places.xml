@@ -9,43 +9,45 @@
         android:id="@+id/toolbarLay"
         layout="@layout/toolbar_layout" />
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbarLay">
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/toolbarLay"
+        >
 
-        <LinearLayout
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilTaskTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="6dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tilTaskTitle"
+            <EditText
+                android:id="@+id/tvTaskTitle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:hint="@string/tasktitlehint"
+                android:textSize="20sp" />
+        </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/tvTaskTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/tasktitlehint"
-                    android:textSize="20sp" />
-            </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilTaskDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tilTaskDesc"
+            <EditText
+                android:id="@+id/tvTaskDesc"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:hint="@string/desc"
+                android:textSize="16sp" />
+        </android.support.design.widget.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/tvTaskDesc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/desc"
-                    android:textSize="16sp" />
-            </android.support.design.widget.TextInputLayout>
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbarLay">
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -186,9 +188,8 @@
                             android:id="@+id/radioTrigger"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
                             android:layout_weight="0.6"
-                            >
+                            android:orientation="horizontal">
 
                             <RadioButton
                                 android:layout_width="0dp"
@@ -249,12 +250,12 @@
 
 
                     <TextView
-                        android:id="@+id/tvFromDate"
+                        android:id="@+id/btnFromDate"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.35"
-                        android:enabled="false"
+                        android:background="@android:color/transparent"
                         android:gravity="center_vertical|left"
                         android:text="21-Mar-2015"
                         android:textSize="15sp" />
@@ -273,12 +274,12 @@
 
 
                     <TextView
-                        android:id="@+id/tvToDate"
+                        android:id="@+id/btnToDate"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.35"
-                        android:enabled="false"
+                        android:background="@android:color/transparent"
                         android:gravity="center_vertical|left"
                         android:text="21-Mar-2015"
                         android:textSize="15sp" />
@@ -289,18 +290,18 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="12dp"
                     android:gravity="right"
                     android:weightSum="1">
 
 
                     <TextView
-                        android:id="@+id/tvFromTime"
+                        android:id="@+id/btnFromTime"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.35"
-                        android:enabled="false"
+                        android:background="@android:color/transparent"
                         android:gravity="center_vertical|left"
                         android:text="6:00 AM"
                         android:textSize="15sp" />
@@ -318,16 +319,15 @@
 
 
                     <TextView
-                        android:id="@+id/tvToTime"
+                        android:id="@+id/btnToTime"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.35"
-                        android:enabled="false"
+                        android:background="@android:color/transparent"
                         android:gravity="center_vertical|left"
                         android:text="1:00 PM"
                         android:textSize="15sp" />
-
 
                 </TableRow>
 
@@ -355,9 +355,10 @@
                         android:textColor="@color/primary_text"
                         android:textSize="18sp" />
 
-                    <TextView
+
+
+                    <Spinner
                         android:id="@+id/tvRepeatData"
-                        style="?android:attr/spinnerStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
@@ -365,16 +366,16 @@
                         android:gravity="center_vertical|left"
                         android:text="None"
                         android:textColor="@color/primary_text"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:textAlignment="center"
+                        android:spinnerMode="dropdown"
+                        android:entries="@array/data" />
                 </TableRow>
 
             </TableLayout>
+        </ScrollView>
 
-
-        </LinearLayout>
-
-
-    </ScrollView>
+    </LinearLayout>
 
 
     <android.support.design.widget.FloatingActionButton

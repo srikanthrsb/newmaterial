@@ -20,4 +20,13 @@
     <string name="allday">All Day</string>
     <string name="currentlocation">Current Location</string>
     <string name="desc">Description</string>
+
+    <array name="data">
+        <item>Weekdays</item>
+        <item>Weekends</item>
+        <item>Everyday</item>
+        <item>None</item>
+        <item>Custom</item>
+    </array>
+
 </resources>
