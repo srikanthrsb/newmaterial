@@ -4,8 +4,8 @@ package com.sptuts.newmaterial.models;
  * Created by SHRI on 6/25/2015.
  */
 public class CWCountries {
-    String countryName;
-    String capitalCity;
+    private String countryName;
+    private String capitalCity;
 
     public CWCountries(String capitalCity, String countryName) {
         this.capitalCity = capitalCity;

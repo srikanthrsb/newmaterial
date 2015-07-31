@@ -250,7 +250,7 @@
 
 
                     <TextView
-                        android:id="@+id/btnFromDate"
+                        android:id="@+id/tvFromDate"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
@@ -274,7 +274,7 @@
 
 
                     <TextView
-                        android:id="@+id/btnToDate"
+                        android:id="@+id/tvToDate"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
@@ -296,7 +296,7 @@
 
 
                     <TextView
-                        android:id="@+id/btnFromTime"
+                        android:id="@+id/tvFromTime"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
@@ -319,7 +319,7 @@
 
 
                     <TextView
-                        android:id="@+id/btnToTime"
+                        android:id="@+id/tvToTime"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
@@ -358,7 +358,7 @@
 
 
                     <Spinner
-                        android:id="@+id/tvRepeatData"
+                        android:id="@+id/spnrRepeatData"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
@@ -370,6 +370,25 @@
                         android:textAlignment="center"
                         android:spinnerMode="dropdown"
                         android:entries="@array/data" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+
+                    <TextView
+                        android:id="@+id/tvRepeatDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.8"
+                        android:gravity="center_vertical|left"
+                        android:text=""
+                        android:textSize="15sp" />
                 </TableRow>
 
             </TableLayout>

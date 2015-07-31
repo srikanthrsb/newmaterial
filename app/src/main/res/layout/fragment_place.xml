@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.sptuts.newmaterial.PlaceActivityFragment">
+    tools:context="com.sptuts.newmaterial.fragments.PlaceActivityFragment">
 
 
     <include
@@ -143,8 +143,11 @@
                     android:layout_weight="0.8"
                     android:enabled="false"
                     android:gravity="center_vertical"
-                    android:hint="Current Location"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:max="100"
+                    android:progress="10"
+                    android:textDirection="inherit"
+                    />
             </TableRow>
 
             <TableRow

@@ -9,7 +9,7 @@
     </string>
 
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Complete Data</string>
     <string name="secondfragment">Gain</string>
     <string name="thirdfragment">Loss</string>
@@ -20,6 +20,8 @@
     <string name="allday">All Day</string>
     <string name="currentlocation">Current Location</string>
     <string name="desc">Description</string>
+    <string name="weekdays_title">Weekdays</string>
+    <string name="choose">Choose</string>
 
     <array name="data">
         <item>Weekdays</item>
@@ -27,6 +29,16 @@
         <item>Everyday</item>
         <item>None</item>
         <item>Custom</item>
+    </array>
+
+    <array name="weekdays">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
     </array>
 
 </resources>

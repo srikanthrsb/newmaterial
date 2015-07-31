@@ -13,7 +13,7 @@ import com.sptuts.newmaterial.fragments.TweetList;
  */
 public class PagerAdapter extends FragmentPagerAdapter {
 
-    int mNumOfTabs;
+    private int mNumOfTabs;
 
     public PagerAdapter(FragmentManager fm, int mNumOfTabs) {
         super(fm);
@@ -26,15 +26,12 @@ public class PagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 //Firstfragment firstFrag = new Firstfragment();
-                TweetFragment firstFrag = new TweetFragment();
-                return firstFrag;
+                return new TweetFragment();
             case 1:
                 //Secondfragment secondFrag = new Secondfragment();
-                TweetList secondFrag = new TweetList();
-                return secondFrag;
+                return new TweetList();
             case 2:
-                Thirdfragment thirdFrag = new Thirdfragment();
-                return thirdFrag;
+                return new Thirdfragment();
             default:
                 return null;
 

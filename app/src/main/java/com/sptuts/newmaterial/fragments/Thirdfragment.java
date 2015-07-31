@@ -24,7 +24,6 @@ public class Thirdfragment extends android.support.v4.app.Fragment {
 
     RecyclerView recyclerView;
     RecyclerAdapter recyclerAdapter;
-    private static List<CWCountries> cwCountriesList;
 
     public Thirdfragment() {
         // Required empty public constructor
@@ -48,7 +47,7 @@ public class Thirdfragment extends android.support.v4.app.Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        cwCountriesList = new ArrayList<CWCountries>();
+        List<CWCountries> cwCountriesList = new ArrayList<CWCountries>();
         String[] locales = Locale.getISOCountries();
         for (String countryCode : locales) {
             Locale obj = new Locale("", countryCode);

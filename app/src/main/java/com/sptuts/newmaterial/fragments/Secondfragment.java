@@ -13,7 +13,7 @@ import android.widget.EditText;
 import com.sptuts.newmaterial.R;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,11 +21,11 @@ import butterknife.InjectView;
 public class Secondfragment extends android.support.v4.app.Fragment {
 
 
-    @InjectView(R.id.tilLName) TextInputLayout tilName;
-    @InjectView(R.id.tilAge) TextInputLayout tilAge;
-    @InjectView(R.id.tilPhone) TextInputLayout tilPhone;
-    @InjectView(R.id.edAge) EditText edAge;
-    @InjectView(R.id.edPhone) EditText edPhone;
+    @Bind(R.id.tilLName) TextInputLayout tilName;
+    @Bind(R.id.tilAge) TextInputLayout tilAge;
+    @Bind(R.id.tilPhone) TextInputLayout tilPhone;
+    @Bind(R.id.edAge) EditText edAge;
+    @Bind(R.id.edPhone) EditText edPhone;
 
     public Secondfragment() {
         // Required empty public constructor
@@ -37,7 +37,7 @@ public class Secondfragment extends android.support.v4.app.Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_second, container, false);
-        ButterKnife.inject(this,view);
+        ButterKnife.bind(this,view);
         return view;
     }
 
@@ -57,6 +57,6 @@ public class Secondfragment extends android.support.v4.app.Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.reset(this);
+        ButterKnife.unbind(this);
     }
 }
