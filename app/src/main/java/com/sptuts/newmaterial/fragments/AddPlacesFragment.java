@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sptuts.newmaterial.R;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
@@ -19,10 +18,9 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.util.Calendar;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnItemSelected;
 
 
 /**
@@ -40,6 +38,8 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
     TextView tvToTime;
     @Bind(R.id.tvRepeatDesc)
     TextView tvRepeatDesc;
+    @Bind(R.id.tvLoc)
+    TextView tvLoc;
 
     Spinner spnrRepeatData;
 
@@ -168,4 +168,13 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    @OnClick(R.id.tvLoc)
+    public void callLocationFragment(){
+        SelectPlaceFragment selectPlaceFragment = new SelectPlaceFragment();
+        selectPlaceFragment.setTargetFragment(AddPlacesFragment.this,200);
+        selectPlaceFragment.show(getFragmentManager(),"LOCATIONTAG");
+
+    }
+
 }

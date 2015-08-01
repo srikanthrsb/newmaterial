@@ -22,6 +22,7 @@
     <string name="desc">Description</string>
     <string name="weekdays_title">Weekdays</string>
     <string name="choose">Choose</string>
+    <string name="autocomplete_hint">Enter a place</string>
 
     <array name="data">
         <item>Weekdays</item>
@@ -40,5 +41,6 @@
         <item>Saturday</item>
         <item>Sunday</item>
     </array>
+    <string name="title_activity_select_location">SelectLocation</string>
 
 </resources>
