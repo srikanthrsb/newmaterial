@@ -53,6 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -63,41 +64,83 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
-                        android:src="@drawable/ic_loc_25_5" />
+                        android:src="@drawable/ic_loc_25_5"
+                        android:layout_gravity="center_vertical"
+                        />
 
                     <TextView
-                        android:id="@+id/tvLoc"
+                        android:id="@+id/tvLocName"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_weight="0.8"
+                        android:layout_weight="0.45"
                         android:gravity="center_vertical"
-                        android:text="@string/currentlocation"
+                        android:text="Enter Location"
                         android:textColor="@color/primary_text"
                         android:textSize="18sp" />
+
+                    <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.15"
+                        android:src="@drawable/ic_pointer_17_3"
+                        />
+
+                    <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.15"
+                        android:src="@drawable/ic_myloc"
+                        />
+
                 </TableRow>
 
                 <TableRow
+                    android:id="@+id/trowLocInfo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
                     android:gravity="right"
-                    android:weightSum="1">
+                    android:weightSum="1"
+                    android:visibility="gone"
+                    >
 
-
-                    <TextView
-                        android:id="@+id/tvLocDesc"
+                    <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
                         android:layout_weight="0.8"
-                        android:enabled="false"
-                        android:gravity="center_vertical|left"
-                        android:text="2015 Stack exchange inc; user contributions licensed under cc by-sa 3.0"
-                        android:textSize="15sp" />
+                        >
+
+                        <TextView
+                            android:id="@+id/tvLocTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:enabled="true"
+                            android:gravity="center_vertical|left"
+                            android:text="Gopalan Mall"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/tvLocDesc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:enabled="false"
+                            android:gravity="center_vertical|left"
+                            android:text="2015 Stack exchange inc; user contributions licensed under cc by-sa 3.0"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+
                 </TableRow>
 
+
                 <!--<include layout="@layout/table_divider" />-->
+
 
                 <TableRow
                     android:layout_width="match_parent"

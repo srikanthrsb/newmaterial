@@ -1,6 +1,7 @@
 package com.sptuts.newmaterial.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.sptuts.newmaterial.R;
+import com.sptuts.newmaterial.SelectLocation;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
@@ -38,7 +40,7 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
     TextView tvToTime;
     @Bind(R.id.tvRepeatDesc)
     TextView tvRepeatDesc;
-    @Bind(R.id.tvLoc)
+    @Bind(R.id.tvLocName)
     TextView tvLoc;
 
     Spinner spnrRepeatData;
@@ -169,12 +171,14 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
 
     }
 
-    @OnClick(R.id.tvLoc)
+    @OnClick(R.id.tvLocName)
     public void callLocationFragment(){
-        SelectPlaceFragment selectPlaceFragment = new SelectPlaceFragment();
+        /*SelectPlaceFragment selectPlaceFragment = new SelectPlaceFragment();
         selectPlaceFragment.setTargetFragment(AddPlacesFragment.this,200);
-        selectPlaceFragment.show(getFragmentManager(),"LOCATIONTAG");
+        selectPlaceFragment.show(getFragmentManager(),"LOCATIONTAG");*/
 
+        Intent intent = new Intent(getActivity(), SelectLocation.class);
+        startActivity(intent);
     }
 
 }
