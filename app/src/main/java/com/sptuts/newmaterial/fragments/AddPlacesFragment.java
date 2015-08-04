@@ -1,13 +1,20 @@
 package com.sptuts.newmaterial.fragments;
 
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -55,9 +62,22 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
         ButterKnife.bind(this, view);
         spnrRepeatData = (Spinner) view.findViewById(R.id.spnrRepeatData);
         spnrRepeatData.setOnItemSelectedListener(this);
+        //setupWindowAnimations();
         return view;
     }
 
+
+    private void setupWindowAnimations() {
+        if (Build.VERSION.SDK_INT >= 21) {
+            Explode explode = new Explode();
+            explode.setDuration(2000);
+            getActivity().getWindow().setExitTransition(explode);
+
+            Fade fade = new Fade();
+            fade.setDuration(2000);
+            getActivity().getWindow().setReenterTransition(fade);
+        }
+    }
 
     /*AdapterView.OnItemSelectedListener onSelectedLstr = new AdapterView.OnItemSelectedListener() {
         @Override
@@ -122,7 +142,7 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
                     public boolean onSelection(MaterialDialog dialog, Integer[] which, CharSequence[] text) {
                         StringBuilder str = new StringBuilder();
                         for (int i = 0; i < which.length; i++) {
-                            if (i > 0){
+                            if (i > 0) {
                                 str.append(text[i]);
                                 str.append(", ");
                             }
@@ -172,13 +192,17 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
     }
 
     @OnClick(R.id.tvLocName)
-    public void callLocationFragment(){
+    public void callLocationFragment() {
         /*SelectPlaceFragment selectPlaceFragment = new SelectPlaceFragment();
         selectPlaceFragment.setTargetFragment(AddPlacesFragment.this,200);
         selectPlaceFragment.show(getFragmentManager(),"LOCATIONTAG");*/
 
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), tvLoc, "sharedTextView");
         Intent intent = new Intent(getActivity(), SelectLocation.class);
-        startActivity(intent);
+        //startActivity(intent);
+        //startActivity(intent, options.toBundle());
+        getActivity().startActivity(intent,options.toBundle());
+
     }
 
 }

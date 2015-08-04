@@ -1,32 +1,25 @@
 package com.sptuts.newmaterial;
 
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.Explode;
-import android.transition.Fade;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class SelectLocation extends AppCompatActivity {
+public class GridActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_location);
-
+        setContentView(R.layout.activity_grid);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_select_location, menu);
+        getMenuInflater().inflate(R.menu.menu_grid, menu);
         return true;
     }
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

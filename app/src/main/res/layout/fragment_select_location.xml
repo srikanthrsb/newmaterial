@@ -18,7 +18,9 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/abc_action_bar_content_inset_material"
         android:hint="@string/autocomplete_hint"
-        android:textColor="@android:color/primary_text_light" />
+        android:textColor="@android:color/primary_text_light"
+        android:transitionName="sharedTextView"
+        />
 
     <ImageView
         android:layout_width="wrap_content"

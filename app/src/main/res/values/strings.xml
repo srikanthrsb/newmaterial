@@ -42,5 +42,7 @@
         <item>Sunday</item>
     </array>
     <string name="title_activity_select_location">SelectLocation</string>
+    <string name="title_activity_grid">GridActivity</string>
+    <string name="title_activity_grid_place">GridPlace</string>
 
 </resources>
