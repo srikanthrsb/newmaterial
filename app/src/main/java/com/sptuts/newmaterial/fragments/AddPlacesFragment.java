@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.NumberPicker;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -49,7 +50,10 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
     TextView tvRepeatDesc;
     @Bind(R.id.tvLocName)
     TextView tvLoc;
+    @Bind(R.id.tvRadDesc)
+    TextView tvRadDesc;
 
+    SeekBar sbRadius;
     Spinner spnrRepeatData;
 
     public AddPlacesFragment() {
@@ -62,10 +66,39 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
         ButterKnife.bind(this, view);
         spnrRepeatData = (Spinner) view.findViewById(R.id.spnrRepeatData);
         spnrRepeatData.setOnItemSelectedListener(this);
+        sbRadius = (SeekBar) view.findViewById(R.id.sbRadius);
+        sbRadius.setOnSeekBarChangeListener(sbRadiusLstnr);
+        sbRadius.setProgress(15);
+        //setSeekBar();
         //setupWindowAnimations();
+
         return view;
     }
 
+
+    SeekBar.OnSeekBarChangeListener sbRadiusLstnr = new SeekBar.OnSeekBarChangeListener() {
+
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+            if (progress == 0) {
+                progress = 1;
+            }
+            float currentProgress = progress * 0.1f;
+            String yourprogress = String.format("%.1f", currentProgress);
+            tvRadDesc.setText("Radius : " + yourprogress + " km");
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+
+        }
+    };
 
     private void setupWindowAnimations() {
         if (Build.VERSION.SDK_INT >= 21) {
@@ -201,7 +234,7 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
         Intent intent = new Intent(getActivity(), SelectLocation.class);
         //startActivity(intent);
         //startActivity(intent, options.toBundle());
-        getActivity().startActivity(intent,options.toBundle());
+        getActivity().startActivity(intent, options.toBundle());
 
     }
 
