@@ -8,6 +8,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.transition.Explode;
 import android.transition.Fade;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -239,6 +241,23 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
         //startActivity(intent, options.toBundle());
         getActivity().startActivity(intent, options.toBundle());
 
+    }
+
+
+    public void compareDate() {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Date date1 = sdf.parse("2009-12-31");
+            Date date2 = sdf.parse("2010-01-31");
+
+            if(date1.compareTo(date2)>0){
+                Log.v("app","Date1 is after Date2");
+            }else if(date1.compareTo(date2)<0){
+                Log.v("app", "Date1 is before Date2");
+            }else if(date1.compareTo(date2)==0){
+                Log.v("app","Date1 is equal to Date2");
+            }
+        } catch(Exception e) { }
     }
 
 }
