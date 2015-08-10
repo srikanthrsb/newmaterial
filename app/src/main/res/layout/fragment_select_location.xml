@@ -55,7 +55,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="12dp"
-                android:src="@drawable/ic_loc_drop_30_5" />
+                android:src="@drawable/ic_recent_30_5" />
 
             <TextView
                 android:id="@+id/tvSelectedLocTitle"

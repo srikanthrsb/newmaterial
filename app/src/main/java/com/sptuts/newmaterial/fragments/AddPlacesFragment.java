@@ -1,7 +1,6 @@
 package com.sptuts.newmaterial.fragments;
 
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,12 +8,10 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.transition.Explode;
 import android.transition.Fade;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.NumberPicker;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -26,6 +23,7 @@ import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.RadialPickerLayout;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import butterknife.Bind;
@@ -132,10 +130,14 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
     @OnClick({R.id.tvFromDate, R.id.tvToDate})
     public void setDates(final View view) {
         Calendar now = Calendar.getInstance();
+        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM");
         DatePickerDialog dpd = DatePickerDialog.newInstance(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePickerDialog datePickerDialog, int year, int monthOfYear, int dayOfMonth) {
-                String date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                String month = simpleDateFormat.format(monthOfYear);
+
+                //String date = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                String date = dayOfMonth + "-" + month + "-" + year;
                 if (view.getId() == R.id.tvFromDate) {
                     tvFromDate.setText(date);
                 } else {
@@ -144,6 +146,7 @@ public class AddPlacesFragment extends Fragment implements AdapterView.OnItemSel
                 //tvFromDate.setText(date);
             }
         }, now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH));
+        dpd.setMinDate(now);
         dpd.show(getActivity().getFragmentManager(), "Datepickerdialog");
     }
 

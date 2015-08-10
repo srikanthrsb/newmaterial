@@ -64,7 +64,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
-                        android:src="@drawable/ic_loc_25_5"
+                        android:src="@drawable/ic_locpt_30_5"
                         android:layout_gravity="center_vertical"
                         />
 
@@ -154,7 +154,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
-                        android:src="@drawable/ic_rad_25_5" />
+                        android:src="@drawable/ic_rad_30_5" />
 
 
                     <TextView
@@ -201,7 +201,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
-                        android:src="@drawable/ic_bell_25_5" />
+                        android:src="@drawable/ic_notif_30_5" />
 
                     <TextView
                         android:id="@+id/tvTriggerTitle"
@@ -210,7 +210,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="0.8"
                         android:gravity="center_vertical|left"
-                        android:text="Notify Points"
+                        android:text="Notification Points"
                         android:textColor="@color/primary_text"
                         android:textSize="18sp" />
                 </TableRow>
@@ -226,7 +226,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:layout_weight="0.6"
+                        android:layout_weight="0.65"
                         android:orientation="horizontal">
 
                         <RadioGroup
@@ -272,7 +272,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
-                        android:src="@drawable/ic_time_25_5" />
+                        android:src="@drawable/ic_alarm_30_5" />
 
                     <android.support.v7.widget.SwitchCompat
                         android:id="@+id/switch_compat"
@@ -285,6 +285,30 @@
                         android:textSize="18sp" />
                 </TableRow>
 
+            <TableLayout
+                android:id="@+id/tblAlarm"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.8"
+                        android:gravity="center_vertical|left"
+                        android:text="Selected Dates"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp" />
+                </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -314,7 +338,7 @@
                         android:layout_weight="0.10"
                         android:enabled="false"
                         android:gravity="center_vertical|left"
-                        android:text="To"
+                        android:text="to"
                         android:textSize="15sp" />
 
 
@@ -335,7 +359,26 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right"
+                    android:weightSum="1">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.8"
+                        android:gravity="center_vertical|left"
+                        android:text="Occurs each day at"
+                        android:textColor="@color/primary_text"
+                        android:textSize="14sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
                     android:gravity="right"
                     android:weightSum="1">
 
@@ -359,7 +402,7 @@
                         android:layout_weight="0.10"
                         android:enabled="false"
                         android:gravity="center_vertical|left"
-                        android:text="To"
+                        android:text="to"
                         android:textSize="15sp" />
 
 
@@ -376,6 +419,8 @@
 
                 </TableRow>
 
+            </TableLayout>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -387,7 +432,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.2"
-                        android:src="@drawable/ic_repeat_25_5" />
+                        android:src="@drawable/ic_repeat_30_5" />
 
                     <TextView
                         android:id="@+id/tvRepeatTitle"
