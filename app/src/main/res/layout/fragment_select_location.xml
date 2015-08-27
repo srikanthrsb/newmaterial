@@ -84,8 +84,7 @@
         android:id="@+id/cvCurrentLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-
+        card_view:cardBackgroundColor="#673AB7"
         >
 
         <RelativeLayout
@@ -102,7 +101,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="12dp"
-                android:src="@drawable/ic_curloc_30_5" />
+                android:src="@drawable/ic_notif_30_5"
+                />
 
             <TextView
                 android:id="@+id/tvLocTitle"
@@ -110,8 +110,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/currentLocIcon"
-                android:text="Current Location"
-                android:textSize="18sp" />
+                android:text="23"
+                android:textSize="18sp"
+                android:textColor="@color/mdtp_white"
+                />
 
             <TextView
                 android:id="@+id/tvLocDescription"
@@ -122,6 +124,7 @@
                 android:layout_toRightOf="@+id/currentLocIcon"
                 android:ellipsize="end"
                 android:singleLine="true"
+                android:textColor="@color/mdtp_white"
                 android:text="Prestige Estates Projects Ltd. The Falcon House, No. 1, Main Guard Cross Road, Bangalore - 560 001" />
 
         </RelativeLayout>

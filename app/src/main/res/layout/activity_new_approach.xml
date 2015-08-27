@@ -9,162 +9,127 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="112dp"
-        android:fitsSystemWindows="true"
+        android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.design.widget.CollapsingToolbarLayout
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            android:minHeight="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlwaysCollapsed|enterAlways">
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:fitsSystemWindows="false"
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+        </android.support.v7.widget.Toolbar>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="2dp"
+            app:contentPadding="10dp"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                android:fitsSystemWindows="false"
-                app:layout_collapseMode="pin"
-                app:layout_scrollFlags="scroll|enterAlways"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
-
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    app:cardBackgroundColor="#fff"
-                    app:cardCornerRadius="6dp"
-                    app:cardElevation="3dp"
-                    app:contentPadding="6dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:drawableLeft="@drawable/ic_alarm_30_5"
-                        android:drawablePadding="32dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="8dp"
-                        android:text="Search"
-                        android:textColor="#9e9e9e"
-                        android:textSize="14sp" />
-
-                </android.support.v7.widget.CardView>
-
-            </android.support.v7.widget.Toolbar>
-
-            <android.support.v7.widget.CardView
-                android:layout_height="48dp"
-                android:layout_width="match_parent"
-                android:layout_marginRight="18dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="?attr/actionBarSize"
-                app:cardBackgroundColor="#fff"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="3dp"
-                app:contentPadding="6dp"
-                app:layout_collapseMode="pin">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
 
                 <TextView
-                    android:layout_height="32dp"
-                    android:layout_width="32dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_gravity="left|center_vertical"
-                    android:gravity="center"
-                    android:textSize="18sp"
-                    android:textColor="#fff"
-                    android:background="@drawable/ic_bell_25_5"
-                    android:text="A"/>
-
-
-
-
-                <TextView
-                    android:layout_height="wrap_content"
+                    android:id="@+id/tvTaskTitle"
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="96dp"
-                    android:id="@+id/item_textview"
-                    android:layout_gravity="left|center_vertical"
-                    android:textSize="18sp"
-                    android:textColor="#212121"
-                    android:text="Contact A"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:text="Meeting with John Doe!"
+                    android:textSize="28sp" />
 
+                <TextView
+                    android:id="@+id/tvTaskDesc"
+                    fontPath="fonts/Roboto-Italic.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Meeting on the priliminary discussion about new project and other things"
+                    android:textSize="15sp"
+                    android:textStyle="normal|italic"
+                    tools:ignore="MissingPrefix" />
+            </LinearLayout>
 
-            </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>
 
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-
-
-    </android.support.design.widget.AppBarLayout>
-
-<!--
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        card_view:cardCornerRadius="5dp"
-        card_view:cardElevation="2dp"
-        card_view:contentPadding="10dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/tvTaskTitle"
-                fontPath="fonts/SourceSansPro-Regular.otf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:ellipsize="end"
-                android:text="Meeting with John Doe!"
-                android:textSize="28sp" />
-
-            <TextView
-                android:id="@+id/tvTaskDesc"
-                fontPath="fonts/Roboto-Italic.ttf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:gravity="center_horizontal"
-                android:text="Meeting on the priliminary discussion about new project and other things"
-                android:textSize="15sp"
-                android:textStyle="normal|italic"
-                tools:ignore="MissingPrefix" />
-        </LinearLayout>
-
-    </android.support.v7.widget.CardView>
--->
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@color/primary"
-            app:layout_scrollFlags="scroll" />
+            android:background="@color/primary" />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!--
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv"
+            app:cardBackgroundColor="#fff"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="120dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="2dp"
+            app:contentPadding="10dp">
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
 
+                <TextView
+                    android:id="@+id/tvTaskTitle"
+                    fontPath="fonts/SourceSansPro-Regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:text="Meeting with John Doe!"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/tvTaskDesc"
+                    fontPath="fonts/Roboto-Italic.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="Meeting on the priliminary discussion about new project and other things"
+                    android:textSize="15sp"
+                    android:textStyle="normal|italic"
+                    tools:ignore="MissingPrefix" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+    -->
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </android.support.design.widget.CoordinatorLayout>

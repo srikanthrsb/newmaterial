@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.sptuts.newmaterial.fragments.LocFragment;
 import com.sptuts.newmaterial.fragments.Thirdfragment;
 
 /**
@@ -27,7 +28,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 return new Thirdfragment(); //TweetFragment();
             case 1:
                 //Secondfragment secondFrag = new Secondfragment();
-                return new Thirdfragment(); //TweetList();
+                return new LocFragment(); //TweetList();
             case 2:
                 return new Thirdfragment();
             default:
