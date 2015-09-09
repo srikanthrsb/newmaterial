@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class MyActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, ResultCallback<LocationSettingsResult>,GoogleApiClient.ConnectionCallbacks , LocationListener{
+public class MyActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, ResultCallback<LocationSettingsResult>, GoogleApiClient.ConnectionCallbacks, LocationListener {
 
     protected static final String TAG = "location-settings";
     protected static final int REQUEST_CHECK_SETTINGS = 0x1;
@@ -62,6 +62,7 @@ public class MyActivity extends AppCompatActivity implements GoogleApiClient.OnC
 
     protected Location mCurrentLocation;
     TextView tvCurrentLocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +72,7 @@ public class MyActivity extends AppCompatActivity implements GoogleApiClient.OnC
         //checkLocationSettings();
         //checkConnectionDetails();
         //checkISODateTime();
-        String iso = getISODate("07-Sep-2015","dd-MMM-yyyy");
+        String iso = getISODate("07-Sep-2015", "dd-MMM-yyyy");
         tvCurrentLocation.setText(iso);
     }
 
@@ -82,8 +83,7 @@ public class MyActivity extends AppCompatActivity implements GoogleApiClient.OnC
         SimpleDateFormat formTime = new SimpleDateFormat("h:mm aa");
         Date date = null;
         Date time = null;
-        try
-        {
+        try {
             date = form.parse(strDate);
             time = formTime.parse(strTime);
             SimpleDateFormat postFormater = new SimpleDateFormat("yyyy-MM-dd");
@@ -94,32 +94,41 @@ public class MyActivity extends AppCompatActivity implements GoogleApiClient.OnC
             //String newTimeStr = sdf.format(time);
             //System.out.println("Date  : "+newDateStr);
             //System.out.println("Time  : "+newTimeStr);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
 
-    private String getISODate(String strDate,String strFormat){
-        String isoDate="";
+    private String getISODate(String strDate, String strFormat) {
+        String isoDate = "";
         SimpleDateFormat form = new SimpleDateFormat(strFormat);
         SimpleDateFormat iSOFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date = null;
-        try{
-            date=form.parse(strDate);
-            isoDate=iSOFormat.format(date);
-        }
-        catch (Exception e)
-        {
+        try {
+            date = form.parse(strDate);
+            isoDate = iSOFormat.format(date);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         return isoDate;
-
     }
 
+
+    private String getDateTimeInFormat(String strDate, String fromFormat, String toFormat) {
+        String strNewDate = "";
+        SimpleDateFormat from = new SimpleDateFormat(fromFormat);
+        SimpleDateFormat to = new SimpleDateFormat(toFormat);
+        Date date = null;
+        try {
+            date = from.parse(strDate);
+            strNewDate = to.format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return strNewDate;
+    }
 
 
     public static String formatDateTime(Context context, String timeToFormat) {
@@ -306,12 +315,12 @@ public class MyActivity extends AppCompatActivity implements GoogleApiClient.OnC
     }
 
 
-    protected void checkConnectionDetails(){
+    protected void checkConnectionDetails() {
         ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
         // Check if Internet present
         if (!cd.isConnectingToInternet()) {
             // Internet Connection is not present
-            Toast.makeText(getApplicationContext(),"Internet not connected",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Internet not connected", Toast.LENGTH_LONG).show();
             /*Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
             startActivity(intent);*/
             Intent intent = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
@@ -323,13 +332,12 @@ public class MyActivity extends AppCompatActivity implements GoogleApiClient.OnC
         }
     }
 
-    public void showCurrentLocation(){
+    public void showCurrentLocation() {
         /*if (mCurrentLocation == null) {
             mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
             Toast.makeText(getApplicationContext(),"Location is null",Toast.LENGTH_LONG).show();
         }*/
-        if(!mGoogleApiClient.isConnected())
-        {
+        if (!mGoogleApiClient.isConnected()) {
             mGoogleApiClient.connect();
             mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         }
@@ -359,7 +367,7 @@ public class MyActivity extends AppCompatActivity implements GoogleApiClient.OnC
 
     @Override
     public void onLocationChanged(Location location) {
-        if (location==null) return;
-        mCurrentLocation=location;
+        if (location == null) return;
+        mCurrentLocation = location;
     }
 }
