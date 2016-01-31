@@ -1,4 +1,4 @@
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sptuts.newmaterial.views.ContextMenuRecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/recyclerView"
     android:layout_width="match_parent"

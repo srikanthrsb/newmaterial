@@ -41,7 +41,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.CWHold
         return cw.size();
     }
 
-    public static class CWHolder extends RecyclerView.ViewHolder {
+    public static class CWHolder extends RecyclerView.ViewHolder implements View.OnLongClickListener {
 
         TextView tv1, tv2;
 
@@ -49,6 +49,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.CWHold
             super(itemView);
             tv1 = (TextView) itemView.findViewById(R.id.tv1);
             tv2 = (TextView) itemView.findViewById(R.id.tv2);
+            itemView.setOnLongClickListener(this);
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            itemView.showContextMenu();
+            return true;
         }
     }
 }

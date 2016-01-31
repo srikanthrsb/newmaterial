@@ -8,6 +8,8 @@
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.afollestad/material-dialogs/0.7.7.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.afollestad/material-dialogs/0.7.7.0/bbe78c980df471fa8d1433a062e49396c44ec42b/material-dialogs-0.7.7.0-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>

@@ -4,14 +4,18 @@ package com.sptuts.newmaterial.fragments;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.sptuts.newmaterial.R;
 import com.sptuts.newmaterial.adapters.RecyclerAdapter;
 import com.sptuts.newmaterial.models.CWCountries;
+import com.sptuts.newmaterial.views.ContextMenuRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +26,7 @@ import java.util.Locale;
  */
 public class Thirdfragment extends android.support.v4.app.Fragment {
 
-    RecyclerView recyclerView;
+    ContextMenuRecyclerView recyclerView;
     RecyclerAdapter recyclerAdapter;
 
     public Thirdfragment() {
@@ -41,12 +45,12 @@ public class Thirdfragment extends android.support.v4.app.Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        recyclerView = (RecyclerView) getView().findViewById(R.id.recyclerView);
+        recyclerView = (ContextMenuRecyclerView) getView().findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-
+        registerForContextMenu(recyclerView);
         List<CWCountries> cwCountriesList = new ArrayList<CWCountries>();
         String[] locales = Locale.getISOCountries();
         for (String countryCode : locales) {
@@ -56,5 +60,32 @@ public class Thirdfragment extends android.support.v4.app.Fragment {
 
         recyclerAdapter = new RecyclerAdapter(cwCountriesList);
         recyclerView.setAdapter(recyclerAdapter);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.menu_recy, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        ContextMenuRecyclerView.RecyclerViewContextMenuInfo info = (ContextMenuRecyclerView.RecyclerViewContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.mnuCopy:
+                // do your stuff
+                Toast.makeText(getContext(),"Copy is Selected",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mnuDelete:
+                // do your stuff
+                Toast.makeText(getContext(),"Delete is Selected",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mnuEdit:
+                // do your stuff
+                Toast.makeText(getContext(),"Edit is Selected",Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 }
